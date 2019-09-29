@@ -30,8 +30,8 @@ public class BaseTest {
     @Parameters({"browser"})
     @BeforeClass(alwaysRun = true)
     public void setUp(@Optional("chrome") String browser) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "d:/distribs/selenium/chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "d:/distribs/selenium/geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:/drivers/selenium/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "D:/drivers/selenium/geckodriver.exe");
 //        driver = new ChromeDriver()
 
         proxy = new BrowserMobProxyServer();
