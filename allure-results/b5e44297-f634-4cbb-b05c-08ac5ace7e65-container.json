@@ -1,0 +1,1 @@
+{"uuid":"b5e44297-f634-4cbb-b05c-08ac5ace7e65","name":"com.telesens.selenide.RozetkaTests","children":["524e2a6f-8be2-4669-b6f8-1a2ad19326a7"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1570210683362,"stop":1570210683369}],"afters":[],"links":[],"start":1570210614054,"stop":1570210750420}

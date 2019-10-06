@@ -1,5 +1,6 @@
 package com.telesens.automationpractice;
 
+import com.telesens.automationpractice.listener.TestListener;
 import com.telesens.automationpractice.page.AuthPage;
 import com.telesens.framework.page.BasePage;
 import com.telesens.framework.test.BaseTest;
@@ -12,10 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.apache.logging.log4j.util.ReflectionUtil;
 
 import java.io.FileReader;
@@ -25,6 +23,7 @@ import java.util.function.Function;
 
 import static com.telesens.automationpractice.page.HomePage.startFromHome;
 
+@Listeners(TestListener.class)
 public class AuthTests extends BaseTest {
     private static final Logger LOG =  LogManager.getLogger(AuthTests.class);
     private static final String DEFAULT_PATH = "src/main/resources/automationpractice.properties";
@@ -41,7 +40,7 @@ public class AuthTests extends BaseTest {
         baseUrl = prop.getProperty("base.url");
     }
 
-    @Test(enabled = false)
+    @Test
     public void testAuthSuccess() throws Exception {
         driver.get(baseUrl);
         driver.findElement(By.linkText("Sign in")).click();
@@ -57,7 +56,6 @@ public class AuthTests extends BaseTest {
 //        Assert.assertEquals("", "Oleg....");
     }
 
-
     @Test(dataProvider = "authErrorMessageProvider")
     public void testAuthErrorMessage(String login, String passw, String expectedError) {
         BasePage basePage = startFromHome(driver, baseUrl)
@@ -72,10 +70,9 @@ public class AuthTests extends BaseTest {
     }
 
     @Test
-    @Ignore
     public void testRollover() {
         driver.get(baseUrl);
-        WebElement slider = driver.findElement(By.id("homeslider"));
+        WebElement slider = driver.findElement(By.id("homeslider123"));
         String[] styles = {"", "", ""};
 
         Function<WebDriver, Boolean> rollingComplete =
