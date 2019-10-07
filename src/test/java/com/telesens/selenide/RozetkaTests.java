@@ -32,6 +32,7 @@ public class RozetkaTests {
     @Test
 //    @Ignore
     public void testSortMonitor() {
+        // random comment
         open("https://rozetka.com.ua/");
         $(byPartialLinkText("Ноутбуки")).hover();
         $(byPartialLinkText("Мониторы")).click();
