@@ -148,7 +148,7 @@
                                 </property>
                             </systemProperties>
                             <suiteXmlFiles>
-                                <suiteXmlFile>C:\Users\User\IdeaProjects\qa-ja-07-simple\suites\testng-mobile.xml</suiteXmlFile>
+                                <suiteXmlFile>${suite}</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
