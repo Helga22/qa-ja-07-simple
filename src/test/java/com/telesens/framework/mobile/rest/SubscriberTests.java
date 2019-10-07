@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class SubscriberTests {
 
-    @Test
+    @Test(enabled = false)
     public void testGet() {
 
         RestAssured.baseURI = "http://localhost/rest/json";
